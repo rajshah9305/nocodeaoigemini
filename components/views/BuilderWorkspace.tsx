@@ -296,7 +296,7 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({ initialPromp
                 {tab === 'preview' && <PlayCircle size={12} className="sm:w-3.5 sm:h-3.5" />}
                 {tab === 'code' && <Code2 size={12} className="sm:w-3.5 sm:h-3.5" />}
                 {tab === 'logs' && <Terminal size={12} className="sm:w-3.5 sm:h-3.5" />}
-                <span className="hidden xs:inline">{tab.toUpperCase()}</span>
+                <span className="hidden sm:inline">{tab.toUpperCase()}</span>
               </button>
             ))}
           </div>
@@ -616,8 +616,8 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({ initialPromp
                 onClick={() => handleBuild(refineInput, true)}
                 disabled={isBuilding || !refineInput}
               >
-                <span className="hidden xs:inline">Update</span>
-                <span className="xs:hidden">Go</span>
+                <span className="hidden sm:inline">Update</span>
+                <span className="sm:hidden">Go</span>
               </Button>
             </div>
           </div>
