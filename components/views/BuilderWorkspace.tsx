@@ -253,7 +253,6 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({ initialPromp
         </div>
 
         <div className="flex items-center gap-2 md:gap-3 shrink-0">
-          <Button variant="dark" onClick={openSettings} icon={Settings} className="!py-2 !px-3 text-xs hidden sm:flex">Config</Button>
           <Button 
             variant={isBuilding ? 'secondary' : 'success'} 
             icon={isBuilding ? Loader2 : Download}
@@ -263,6 +262,15 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({ initialPromp
           >
             <span className="hidden sm:inline">{isBuilding ? 'Building' : 'Export'}</span>
             <span className="sm:hidden">{isBuilding ? '...' : <Download size={14}/>}</span>
+          </Button>
+          <Button 
+            variant="dark" 
+            onClick={openSettings} 
+            icon={Settings} 
+            className="!py-2 !px-3 md:!px-4 text-xs"
+            title="Settings"
+          >
+            <span className="hidden sm:inline">Settings</span>
           </Button>
         </div>
       </header>
@@ -608,15 +616,6 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({ initialPromp
                 disabled={isBuilding || !refineInput}
               >
                 Update
-              </Button>
-              <Button 
-                variant="dark" 
-                icon={Settings}
-                className="!py-2.5 !px-3 md:!py-3 md:!px-4"
-                onClick={openSettings}
-                title="Settings"
-              >
-                <span className="hidden md:inline">Settings</span>
               </Button>
             </div>
           </div>
