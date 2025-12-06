@@ -259,8 +259,10 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({ initialPromp
             className={`!py-1.5 !px-2 sm:!py-2 sm:!px-3 md:!px-4 !text-[10px] sm:!text-xs ${isBuilding ? 'opacity-70' : ''}`}
             onClick={handleDownload}
             disabled={isBuilding || !currentCode}
+            title={isBuilding ? 'Building...' : 'Export HTML'}
           >
             <span className="hidden sm:inline">{isBuilding ? 'Building' : 'Export'}</span>
+            <span className="sm:hidden">{isBuilding ? '...' : 'Export'}</span>
           </Button>
           <Button 
             variant="dark" 
