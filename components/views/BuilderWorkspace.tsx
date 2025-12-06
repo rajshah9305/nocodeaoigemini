@@ -580,37 +580,45 @@ export const BuilderWorkspace: React.FC<BuilderWorkspaceProps> = ({ initialPromp
                       </div>
                   </div>
                 </div>
-
-                {/* Prompt Refinement Bar */}
-                <div className="border-t border-gray-200 bg-white/95 backdrop-blur p-3 md:p-4 shrink-0 z-40">
-                  <div className="max-w-3xl mx-auto flex gap-2 md:gap-3 items-center">
-                    <div className="flex-1 relative group">
-                       <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-orange-500 transition-colors">
-                          <Sparkles size={16} />
-                       </div>
-                       <input 
-                        type="text" 
-                        value={refineInput}
-                        onChange={(e) => setRefineInput(e.target.value)}
-                        onKeyDown={(e) => e.key === 'Enter' && !isBuilding && refineInput && handleBuild(refineInput, true)}
-                        placeholder="Refine app..."
-                        className="w-full bg-white border border-gray-300 text-gray-900 pl-9 md:pl-10 pr-3 md:pr-4 py-2.5 md:py-3 rounded-lg text-base md:text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-mono transition-all placeholder:text-gray-400 shadow-sm"
-                        disabled={isBuilding}
-                       />
-                    </div>
-                    <Button 
-                      variant="primary" 
-                      className="!py-2.5 !px-4 md:!py-3 md:!px-6 shadow-lg whitespace-nowrap"
-                      onClick={() => handleBuild(refineInput, true)}
-                      disabled={isBuilding || !refineInput}
-                    >
-                      Update
-                    </Button>
-                  </div>
-                </div>
-
               </div>
             )}
+          </div>
+
+          {/* Constant Refinement Bar */}
+          <div className="border-t border-gray-200 bg-white/95 backdrop-blur p-3 md:p-4 shrink-0 z-40">
+            <div className="max-w-3xl mx-auto flex gap-2 md:gap-3 items-center">
+              <div className="flex-1 relative group">
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-orange-500 transition-colors">
+                  <Sparkles size={16} />
+                </div>
+                <input 
+                  type="text" 
+                  value={refineInput}
+                  onChange={(e) => setRefineInput(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && !isBuilding && refineInput && handleBuild(refineInput, true)}
+                  placeholder="Refine app..."
+                  className="w-full bg-white border border-gray-300 text-gray-900 pl-9 md:pl-10 pr-3 md:pr-4 py-2.5 md:py-3 rounded-lg text-base md:text-sm focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 font-mono transition-all placeholder:text-gray-400 shadow-sm"
+                  disabled={isBuilding}
+                />
+              </div>
+              <Button 
+                variant="primary" 
+                className="!py-2.5 !px-4 md:!py-3 md:!px-6 shadow-lg whitespace-nowrap"
+                onClick={() => handleBuild(refineInput, true)}
+                disabled={isBuilding || !refineInput}
+              >
+                Update
+              </Button>
+              <Button 
+                variant="dark" 
+                icon={Settings}
+                className="!py-2.5 !px-3 md:!py-3 md:!px-4"
+                onClick={openSettings}
+                title="Settings"
+              >
+                <span className="hidden md:inline">Settings</span>
+              </Button>
+            </div>
           </div>
         </div>
 
